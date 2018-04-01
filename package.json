@@ -1,0 +1,25 @@
+{
+  "name": "weavedin-internship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "live-server ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anu-Asok/weavedin-internship.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anu-Asok/weavedin-internship/issues"
+  },
+  "homepage": "https://github.com/Anu-Asok/weavedin-internship#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  }
+}
