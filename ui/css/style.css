@@ -1,0 +1,50 @@
+body{
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f8fa;
+}
+
+#header{
+  position: fixed;
+  z-index: 2;
+  top: 0px;
+  width: 100vw;
+  padding: 20px 40px 5px 40px;
+  background-color: white;
+  box-shadow: 0px -6px 14px 0px;
+}
+
+#header > *{
+  display: inline-block;
+}
+
+#header-title{
+  float: left;
+  color: #6379f6;
+  font-size: 16px;
+}
+
+#header-options{
+  font-size: 13px;
+  float: right;
+}
+
+.option{
+  display: inline-block;
+  margin: 0px 10px;
+  color: grey;
+}
+
+.option > div {
+  text-align: center;
+  visibility: hidden;
+}
+
+
+.selected{
+  color: #6379f6;
+}
+
+.selected > div{
+  visibility: visible;
+}
