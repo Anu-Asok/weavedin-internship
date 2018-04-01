@@ -23,7 +23,63 @@
         </a>
       </div>
     </div>
+    <div id="content">
+      <div class="cards">
+        <div class="card">
+          <div class="card-header">
+            <div class="book-icon">
+              <img src="img/book_icon.svg" alt="book_icon">
+            </div>
+            <div class="book-details">
+              <span class="title">Title</span>
+              <span class="isbn">ISBN: 454545</span>
+              <br>
+              by: <span class="author">Kuttan</span>
+              <p class="card-content">
+                sit amet, consectetur adipisicing sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt...<a href="#">More</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="add-btn">
+        <button type="button" id="add-books" class="ui button primary add">Add Books</button>
+      </div>
+    </div>
+    <div class="ui modal">
+      <div class="content">
+        <div class="modal-header">ADD BOOK</div>
+        <div class="ui form">
+          <div class="ui field">
+            <input type="text" placeholder="Book Name" id="book-title">
+          </div>
+          <div class="ui field">
+            <select class="ui search dropdown" id="book-author">
+              <option value="1">sd</option>
+              <option value="2">sd</option>
+              <option value="3">sd</option>
+              <option value="4">sd</option>
+            </select>
+          </div>
+          <div class="ui field">
+            <input type="text" id="book-isbn" placeholder="ISBN">
+          </div>
+          <div class="field">
+            <textarea placeholder="Description of content" rows="6" id="description"></textarea>
+          </div>
+          <div class="fields">
+            <div class="eight wide field cancel">
+              <button type="button" name="button" class="ui button fluid primary">Cancel</button>
+            </div>
+            <div class="eight wide field"  id="save-author">
+              <button type="button" name="button" class="ui button fluid primary">Save Author</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/semantic.min.js"></script>
+    <script src="js/book.js"></script>
   </body>
 </html>

@@ -48,3 +48,132 @@ body{
 .selected > div{
   visibility: visible;
 }
+
+
+#content{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+}
+
+#content > *{
+  display: inline-block;
+  margin: 0px 1%;
+}
+
+.cards{
+  width: 75%;
+}
+
+.add-btn{
+  width: 20%;
+  float: right;
+  text-align: center;
+  font-size: 13px;
+  font-family: 'Roboto';
+  font-weight: 100;
+}
+
+#add-books, #add-authors{
+  width: 100%;
+}
+
+.card{
+  width: 95%;
+  margin: 3px auto;
+  padding: 10px 0px;
+  font-size: 13px;
+  color: #9095aa;
+  background-color: white;
+}
+
+.book-icon, .author-icon{
+  float: left;
+  width: 10%;
+}
+
+.isbn, .birth-place{
+  float: right;
+}
+
+.title, .author{
+  color: #47494f;
+}
+
+.age-gender{
+  font-size: 12px;
+  color: #47494f;
+}
+
+.card-header > *{
+  display: inline-block;
+  padding: 15px;
+}
+
+.card-content{
+  margin-top: 10px;
+}
+
+.book-details, .author-details{
+  font-size: 13px;
+  width: 82%;
+}
+
+.modal-header{
+  margin-bottom: 15px;
+}
+
+.ui.modal{
+  max-width: 500px;
+}
+
+
+#books-written{
+  padding: 20px 0px;
+  font-size: 11px;
+}
+
+
+#breadcrumb{
+  color: #6379f6;
+}
+
+#breadcrumb-title{
+  color: #9095aa;
+}
+
+#book-description, #author-description{
+  background-color: #fff;
+  padding: 5px;
+  margin: 10px 0px;
+  width: 85%;
+  display: inline-block;
+  color: #9095aa;
+}
+
+#prev-next{
+  display: inline-block;
+  width: 20%;
+  top: 26px;
+  position: absolute;
+  margin: 20px 20px;
+  text-align: center;
+  color: #b5b5b5;
+}
+
+#arrow-options{
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+}
+
+#arrow-options > *{
+  width: 49%;
+  padding: 20px 0px;
+  display: inline-block;
+}
+
+#author-description > .cards{
+  margin-left: 10%;
+  width: 87%;
+}
