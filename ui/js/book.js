@@ -26,8 +26,10 @@ saveBook.addEventListener('click', function(){
         alert(request.responseText);
         window.location.href='/';
   		}
-  		else
-  			alert('Something went wrong!');
+  		else{
+        alert('Something went wrong!');
+        window.location.href='/';        
+      }
   		}
   	}
   request.open('POST',"/add-book",true);

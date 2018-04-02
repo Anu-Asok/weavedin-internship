@@ -1,7 +1,7 @@
 var express = require('express');
 const app = express();
-// var morgan = require('morgan');
-// app.use(morgan('combined'));
+var morgan = require('morgan');
+app.use(morgan('combined'));
 var path = require('path');
 var mysql = require('mysql');
 var bodyParser=require('body-parser');
@@ -13,6 +13,11 @@ var pool  = mysql.createPool({
   database: "library"
 });
 
+function shrinkText(text,id){
+  if (text.length > 88)
+    return `${text.slice(0,88)}...<a href="/books/${id}">More</a>`;
+  return text;
+}
 
 function createBooksTemplate(data){
   var cards = '';
@@ -29,7 +34,7 @@ function createBooksTemplate(data){
             <br>
             by: <a href="/authors/${data[i].author_id}"><span class="author">${data[i].name}</span></a>
             <p class="card-content">
-              ${data[i].description}
+              ${shrinkText(data[i].description, data[i].id)}
             </p>
           </div>
         </div>
@@ -80,17 +85,18 @@ function createBooksTemplate(data){
               <div class="modal-header">ADD BOOK</div>
               <div class="ui form">
                 <div class="ui field">
-                  <input type="text" placeholder="Book Name" id="book-title">
+                  <input type="text" placeholder="Book Name" id="book-title" maxlength="30">
                 </div>
                 <div class="ui field">
                   <select class="ui search dropdown" id="book-author">
                   </select>
                 </div>
                 <div class="ui field">
-                  <input type="text" id="book-isbn" placeholder="ISBN">
+                  <input type="text" id="book-isbn" placeholder="ISBN" maxlength="30">
                 </div>
                 <div class="field">
-                  <textarea placeholder="Description of content" rows="6" id="description"></textarea>
+                  <textarea placeholder="Description of content" rows="6" id="description" maxlength="300"></textarea>
+                  <div id="max">Maximum 300 characters</div>
                 </div>
                 <div class="fields">
                   <div class="eight wide field cancel">
@@ -162,7 +168,7 @@ function createBookTemplate(data){
                   <span class="title">${data.title}</span>
                   <span class="isbn">ISBN: ${data.isbn}</span>
                   <br>
-                  by: <a href="#"><span class="author">${data.name}</span></a>
+                  by: <a href="/authors/${data.author_id}"><span class="author">${data.name}</span></a>
                   <p class="card-content">
                     ${data.description}
                   </p>
@@ -263,7 +269,7 @@ function createAuthorsTemplate(data){
           <div class="modal-header">ADD AUTHOR</div>
           <div class="ui form">
             <div class="ui field">
-              <input type="text" placeholder="Author Name" id="author-name">
+              <input type="text" placeholder="Author Name" id="author-name" maxlength="50">
             </div>
             <div class="fields">
               <div class="eight wide field">
@@ -277,10 +283,10 @@ function createAuthorsTemplate(data){
               </div>
             </div>
             <div class="ui field">
-              <input type="text" placeholder="Born in" id="author-birth-place">
+              <input type="text" placeholder="Born in" id="author-birth-place" maxlength="50">
             </div>
             <div class="field">
-              <textarea placeholder="About Author" rows="6" id="about-author"></textarea>
+              <textarea placeholder="About Author" rows="6" id="about-author" maxlength="300"></textarea>
             </div>
             <div class="fields">
               <div class="eight wide field cancel">
@@ -322,7 +328,7 @@ function createAuthorTemplate(obj){
             <img src="/img/book_icon.svg" alt="book_icon">
           </div>
           <div class="book-details">
-            <span class="title">${obj.books[i].title}</span>
+            <a href="/books/${obj.books[i].id}"><span class="title">${obj.books[i].title}</span></a>
             <span class="isbn">ISBN: ${obj.books[i].isbn}</span>
             <br>
             <p class="card-content">
@@ -435,8 +441,9 @@ app.post('/add-book', (req,res) => {
   var obj = req.body;
   var values = `'${obj.title}','${obj.author_id}','${obj.isbn}','${obj.description}'`;
   var query = "INSERT INTO book (title, author_id, isbn, description  ) VALUES ("+values+")";
+  console.log(query);
   pool.query(query, function (err, result) {
-    if (err) res.status(500).send(err.toString());
+    if (err) res.status(500).send(err);
     else{
       res.send('Added successfully!');
     }

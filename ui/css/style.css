@@ -188,3 +188,9 @@ body{
   float: right;
   font-size: 11px;
 }
+
+#max{
+  margin-top: 10px;
+  font-size: 11px;
+  color: #9a9a9a;
+}

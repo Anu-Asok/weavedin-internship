@@ -28,8 +28,10 @@ saveAuthor.addEventListener('click', function(){
         alert(request.responseText);
         window.location.href='/authors';
   		}
-  		else
-  			alert('Something went wrong!');
+  		else{
+        alert('Something went wrong!');
+        window.location.href='/authors';        
+      }
   		}
   	}
   request.open('POST',"/add-author",true);
