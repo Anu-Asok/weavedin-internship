@@ -177,3 +177,14 @@ body{
   margin-left: 10%;
   width: 87%;
 }
+
+.stat{
+  width: 94%;
+  margin: 10px auto;
+  color: grey;
+}
+
+#count{
+  float: right;
+  font-size: 11px;
+}

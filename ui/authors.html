@@ -3,15 +3,14 @@
   <head>
     <meta charset="utf-8">
     <title>Library | Books</title>
-    <link rel="stylesheet" href="css/roboto-font.css">
-    <link rel="stylesheet" href="css/semantic.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/icon.min.css">
+    <link rel="stylesheet" href="/css/roboto-font.css">
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <div id="header">
       <div id="header-title">
-        Library.
+        <a href="/">Library.</a>
       </div>
       <div id="header-options">
         <a href="#" class="option selected">
@@ -26,74 +25,150 @@
     </div>
     <div id="content">
       <div class="cards">
-        <div class="card">
-          <div class="card-header">
-            <div class="author-icon">
-              <img src="img/author_icon.svg" alt="book_icon">
-            </div>
-            <div class="author-details">
-              <span class="author">Name</span>
-              <span class="birth-place">Born in place</span>
-              <br>
-              <span class="age-gender">Age age / gender</span>
-            </div>
-          </div>
+        <div class="stat">
+          Books
+          <span id="count">
+            6 book(s)
+          </span>
         </div>
-        <div class="card">
-          <div class="card-header">
-            <div class="book-icon">
-              <img src="img/author_icon.svg" alt="book_icon">
-            </div>
-            <div class="author-details">
-              <span class="author">Name</span>
-              <span class="birth-place">Born in place</span>
-              <br>
-              <span class="age-gender">Age age / gender</span>
-            </div>
-          </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="book-icon">
+          <img src="/img/book_icon.svg" alt="book_icon">
+        </div>
+        <div class="book-details">
+          <a href="/books/1"><span class="title">test-book</span></a>
+          <span class="isbn">ISBN: 2132165464</span>
+          <br>
+          by: <a href="/authors/1"><span class="author">test</span></a>
+          <p class="card-content">
+            test description
+          </p>
         </div>
       </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="book-icon">
+          <img src="/img/book_icon.svg" alt="book_icon">
+        </div>
+        <div class="book-details">
+          <a href="/books/2"><span class="title">hello</span></a>
+          <span class="isbn">ISBN: sadfsdfasf</span>
+          <br>
+          by: <a href="/authors/1"><span class="author">test</span></a>
+          <p class="card-content">
+            test description
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="book-icon">
+          <img src="/img/book_icon.svg" alt="book_icon">
+        </div>
+        <div class="book-details">
+          <a href="/books/3"><span class="title">lklk</span></a>
+          <span class="isbn">ISBN: dsfasdfasdf</span>
+          <br>
+          by: <a href="/authors/1"><span class="author">test</span></a>
+          <p class="card-content">
+            sdfasf
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="book-icon">
+          <img src="/img/book_icon.svg" alt="book_icon">
+        </div>
+        <div class="book-details">
+          <a href="/books/5"><span class="title">asasasas</span></a>
+          <span class="isbn">ISBN: asasas</span>
+          <br>
+          by: <a href="/authors/1"><span class="author">test</span></a>
+          <p class="card-content">
+            asasas1212
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="book-icon">
+          <img src="/img/book_icon.svg" alt="book_icon">
+        </div>
+        <div class="book-details">
+          <a href="/books/6"><span class="title">Dynamic Learning Edition 110</span></a>
+          <span class="isbn">ISBN: qwqwq1212</span>
+          <br>
+          by: <a href="/authors/4"><span class="author">Jithin KS</span></a>
+          <p class="card-content">
+            Come on!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="book-icon">
+          <img src="/img/book_icon.svg" alt="book_icon">
+        </div>
+        <div class="book-details">
+          <a href="/books/7"><span class="title">This is a test book</span></a>
+          <span class="isbn">ISBN: 123456789</span>
+          <br>
+          by: <a href="/authors/5"><span class="author">Kuttan Thampuran</span></a>
+          <p class="card-content">
+            Best book ever written by KT sir!
+          </p>
+        </div>
+      </div>
+    </div>
+
+      </div>
       <div class="add-btn">
-        <button type="button" id="add-authors" class="ui button primary add">Add Authors</button>
+        <button type="button" id="add-books" class="ui button primary add">Add Books</button>
       </div>
     </div>
     <div class="ui modal">
       <div class="content">
-        <div class="modal-header">ADD AUTHOR</div>
+        <div class="modal-header">ADD BOOK</div>
         <div class="ui form">
           <div class="ui field">
-            <input type="text" placeholder="Author Name">
-          </div>
-          <div class="fields">
-            <div class="eight wide field">
-              <input type="number" placeholder="Age">
-            </div>
-            <div class="eight wide field">
-              <select class="ui search dropdown">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
-            </div>
+            <input type="text" placeholder="Book Name" id="book-title">
           </div>
           <div class="ui field">
-            <input type="text" placeholder="Born in">
+            <select class="ui search dropdown" id="book-author">
+            </select>
+          </div>
+          <div class="ui field">
+            <input type="text" id="book-isbn" placeholder="ISBN">
           </div>
           <div class="field">
-            <textarea placeholder="About Author" rows="6"></textarea>
+            <textarea placeholder="Description of content" rows="6" id="description"></textarea>
           </div>
           <div class="fields">
             <div class="eight wide field cancel">
               <button type="button" name="button" class="ui button fluid primary">Cancel</button>
             </div>
             <div class="eight wide field">
-              <button type="button" name="button" class="ui button fluid primary">Save Author</button>
+              <button type="button" id="save-book" name="button" class="ui button fluid primary">Save Book</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/semantic.min.js"></script>
-    <script src="js/author.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/semantic.min.js"></script>
+    <script src="/js/book.js"></script>
   </body>
 </html>
